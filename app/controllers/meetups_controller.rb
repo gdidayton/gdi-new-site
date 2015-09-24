@@ -2,7 +2,7 @@ class MeetupsController < ApplicationController
 
   def show
     ## Someday there will be caching here!
-    @chapter = Chapter.find_by(slug: params[:slug])
+    @chapter = Chapter.find(2)
 
     params = { group_id: @chapter.meetup_id, key: ENV["MEETUP_API_KEY"]}
     meetup_api = MeetupApi.new
